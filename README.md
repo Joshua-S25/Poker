@@ -2,7 +2,6 @@
 A repo to hold a group coding project for 235!
 
 # Brainstorming Session  
-Joshua's Thoughts
 - Game
   - Snake?
   - Minesweeper?
@@ -11,11 +10,12 @@ Joshua's Thoughts
   - Host Game on here?
   - 
 
-**Potential Idea** - From Todd  
-'5d Tic-Tac-Toe'  
+**3d Tic-Tac-Toe**  
+TTT is on anothet level. The goal of the game is to get three in a row. you can match the usual TTT wins, but you can also win through layers.  
 
-I don't know if this is exactly what you mean, but the version of tic-tac-toe where you go *into* another tic-tac-toe game based on your choices
-Great for:
-- Simple but complex
-- Intersting idea to place into a website (if wanted)
-- AI player could be interesting to code out as well!
+Needs:  
+- Website / GUI
+- Game logistics
+  - Checking win Conditions
+  - Organizatuinal logistics
+- Other Players // AI
