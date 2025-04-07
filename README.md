@@ -19,3 +19,30 @@ Needs:
   - Checking win Conditions
   - Organizatuinal logistics
 - Other Players // AI
+
+
+
+Hours Tracker:  
+J - [x][ ][ ][ ][ ][ ][ ][ ]  
+L - [x][ ][ ][ ][ ][ ][ ][ ]  
+
+# Project Idea Going Forward - Poker    
+Needs:   
+- [ ] Deck object  
+  - [ ] Shuffle  
+  - [ ] Deal  
+  - [ ] Draw  
+  - [ ] Advance Table's Hand  
+  - [ ] Reset?  
+- [ ] Play  
+  - [ ] Pass / Call  
+  - [ ] Check Hand?  
+  - [ ] Raise
+  - [ ] All in
+  - [ ] Fold
+- [ ] Score
+  - [ ] Compare with Table
+  - [ ] Determine if player is only left
+  - [ ] Compare highest hands
+  - [ ] Collect // Apply winnings  
+  
