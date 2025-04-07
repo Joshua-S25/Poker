@@ -47,7 +47,11 @@ Needs:
   - [ ] Collect // Apply winnings
      
 Deck Object/Class?
-Clubs    | 2 3 4 5 6 7 8 9 10 J Q K A
-Spades   | 2 3 4 5 6 7 8 9 10 J Q K A
-Diamonds | 2 3 4 5 6 7 8 9 10 J Q K A
-Hearts   | 2 3 4 5 6 7 8 9 10 J Q K A
+Clubs    | 2 3 4 5 6 7 8 9 10 J Q K A  
+C2 C3 C4 ... CJ CQ CK CA  
+Spades   | 2 3 4 5 6 7 8 9 10 J Q K A  
+S2 S3 S4 ... SJ SQ SK SA  
+Diamonds | 2 3 4 5 6 7 8 9 10 J Q K A  
+D2 D3 D4 ... DJ DQ DK DA  
+Hearts   | 2 3 4 5 6 7 8 9 10 J Q K A  
+H2 H3 H4 ... HJ HQ HK HA  
