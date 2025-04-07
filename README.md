@@ -44,5 +44,10 @@ Needs:
   - [ ] Compare with Table
   - [ ] Determine if player is only left
   - [ ] Compare highest hands
-  - [ ] Collect // Apply winnings  
-  
+  - [ ] Collect // Apply winnings
+     
+Deck Object/Class?
+Clubs    | 2 3 4 5 6 7 8 9 10 J Q K A
+Spades   | 2 3 4 5 6 7 8 9 10 J Q K A
+Diamonds | 2 3 4 5 6 7 8 9 10 J Q K A
+Hearts   | 2 3 4 5 6 7 8 9 10 J Q K A
