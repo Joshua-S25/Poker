@@ -3,6 +3,7 @@ import random
 class Deck():
     def __init__(self):
         # Init a full 52 card deck
+        # NOTE # '1' Cards represent 10s
         self.deck = [
             '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '1C', 'JC', 'QC', 'KC', 'AC',
             '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '1S', 'JS', 'QS', 'KS', 'AS',
@@ -17,13 +18,15 @@ class Deck():
         return f"newDeck = Deck()"
     
     def shuffle(self):
-        # 2 ideas for shuffling
-        # Take the full deck
-            # Split
-            # Merge based 
+        print(self.deck)
+        i = 0
+        while(i < 5):
+            random.shuffle(self.deck)
+            i += 1
 
-        # Use Suffle from Random and loop a few times
-        random.shuffle(self.deck)
+        print("Shuffled")
+        print("")
+        print(self.deck)
     
     def deal(self, numPlayers):
         return
