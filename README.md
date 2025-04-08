@@ -1,4 +1,4 @@
-# free-code-project
+# Free-Code-Project
 A repo to hold a group coding project for 235!
 
 # Brainstorming Session  
