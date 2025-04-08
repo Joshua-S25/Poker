@@ -13,3 +13,12 @@ class Deck():
     
     def __repr__(self):
         return f"newDeck = Deck()"
+    
+    def shuffle(self):
+        return
+    
+    def deal(self, numPlayers):
+        return
+    
+    def draw(self):
+        return
