@@ -1,3 +1,5 @@
+import random
+
 class Deck():
     def __init__(self):
         # Init a full 52 card deck
@@ -15,7 +17,13 @@ class Deck():
         return f"newDeck = Deck()"
     
     def shuffle(self):
-        return
+        # 2 ideas for shuffling
+        # Take the full deck
+            # Split
+            # Merge based 
+
+        # Use Suffle from Random and loop a few times
+        random.shuffle(self.deck)
     
     def deal(self, numPlayers):
         return
