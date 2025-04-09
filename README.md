@@ -23,7 +23,7 @@ Needs:
 
 
 Hours Tracker:  
-J - [x][x][ ][ ][ ][ ][ ][ ]  
+J - [x][x][x][ ][ ][ ][ ][ ]  
 L - [x][ ][ ][ ][ ][ ][ ][ ]  
 
 # Project Idea Going Forward - Poker    

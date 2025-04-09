@@ -1,8 +1,38 @@
-from Deck import Deck
+from deck import Deck
+# ♣♥♦♠
 
 deck = Deck()
 
-deck.shuffle()
+def intro():
+    print(" = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+           "|                WELCOME TO THE TEXAS HOLD 'EM                  |\n",
+           "= ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+           "                                                                 \n",
+           "                    Would you like to Play?                      \n",
+           "                          ( Y / N )                              \n")
+    play = input("                               ")
+
+    while(play not in ['Y', 'y', 'n', 'N', 'exit', 'EXIT']):
+        print("             Sorry, that's not an answer. Try again: ")
+        play = input("                               ")
+
+
+    if((play == 'N' or play == 'n') or (play == 'EXIT' or play == 'exit')):
+        print("                    Maybe next time... Goodbye")
+        return False
+    else:
+        return True
+
+def main():
+
+    if(intro() == False):
+        return
+
+    print("Dealing your cards...")
+
+
+main()
+
 
 
 # Poker Rules and Route
