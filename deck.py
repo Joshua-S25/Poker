@@ -18,17 +18,17 @@ class Deck():
         return f"newDeck = Deck()"
     
     def shuffle(self):
-        print(self.deck)
+        # print(self.deck)  # Pre Shuffle
+
         i = 0
         while(i < 5):
             random.shuffle(self.deck)
             i += 1
 
-        print("Shuffled")
-        print("")
-        print(self.deck)
+        # print(self.deck)  # Post Shuffle
     
     def deal(self, numPlayers):
+
         return
     
     def draw(self):
