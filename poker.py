@@ -3,6 +3,9 @@ from deck import Deck
 
 deck = Deck()
 
+def blank_screen():
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+
 def intro():
     print(" = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
            "|                WELCOME TO THE TEXAS HOLD 'EM                  |\n",
@@ -22,13 +25,39 @@ def intro():
         return False
     else:
         return True
+    
+def pre_flop(hand):
+    print(" = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+          "                                                                  \n",
+          "                            Player 2                              \n",
+          "                            **    **                              \n",
+          "                                                                  \n",
+          "                       **  **  **  **  **                         \n",
+          "                                                                  \n",
+          f"                            {hand[0]}    {hand[1]}               \n",
+          "                            Player 1                              \n",
+          "                                                                  \n",
+          " = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+        )
 
 def main():
 
     if(intro() == False):
         return
 
+    blank_screen()
     print("Dealing your cards...")
+    
+    deck.shuffle()
+    hands = deck.deal(2)
+    
+    playerOneHand = hands[0]
+    playerTwoHand = hands[1]
+
+    pre_flop(playerOneHand)
+
+    print(playerOneHand)
+    print(playerTwoHand)
 
 
 main()
