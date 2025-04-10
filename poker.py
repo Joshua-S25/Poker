@@ -104,14 +104,14 @@ def main():
     playerTwoHand = hands[1]
 
     # Pre Flop - Main Set up of hands and display
-
+    blank_screen()
     pre_flop(playerOneHand)
 
     print(playerOneHand)
     print(playerTwoHand)
 
     # The Flop - Displays three cards and P1 hand
-
+    blank_screen()
     the_flop(playerOneHand, table_hand)
 
     print(playerOneHand)
@@ -119,13 +119,15 @@ def main():
     print(table_hand)
 
     # The Turn - Displays four cards and P1 hand
-
+    blank_screen()
     the_turn(playerOneHand, table_hand)
 
     print(playerOneHand)
     print(playerTwoHand)
     print(table_hand)
 
+    # The River - Display five cards and P1 hand
+    blank_screen()
     the_river(playerOneHand, table_hand)
 
     print(playerOneHand)
