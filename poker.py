@@ -145,7 +145,7 @@ def main():
     blank_screen()
     the_flop(playerOneHand, table_hand)
     
-    if(turnPlayed.lower() != "fold"):
+    if(turnPlayed.lower() != "fold" and turnPlayed.lower() != "all"):
         play_turn()
         turnPlayed = input("You Turn: ")
         if(turnPlayed.lower() == "raise"):
@@ -163,7 +163,7 @@ def main():
     blank_screen()
     the_turn(playerOneHand, table_hand)
 
-    if(turnPlayed.lower() != "fold"):
+    if(turnPlayed.lower() != "fold" and turnPlayed.lower() != "all"):
         play_turn()
         turnPlayed = input("You Turn: ")
         if(turnPlayed.lower() == "raise"):
@@ -181,7 +181,7 @@ def main():
     blank_screen()
     the_river(playerOneHand, table_hand)
 
-    if(turnPlayed.lower() != "fold"):
+    if(turnPlayed.lower() != "fold" and turnPlayed.lower() != "all"):
         play_turn()
         turnPlayed = input("You Turn: ")
         if(turnPlayed.lower() == "raise"):
@@ -229,3 +229,19 @@ main()
 ## The Showdown
     # All reveal cards
     # Best 5-card hand using hole or community wins
+
+
+
+## Win conditions
+    # You are the only one still in ( All folded )
+
+    # Royal Flush
+    # Straight Flush
+    # Four of a Kind
+    # Full House 
+    # Flush
+    # Straight
+    # Three of a Kind
+    # Two Pair
+    # One Pair
+    # High Card
