@@ -40,6 +40,20 @@ def pre_flop(hand):
           " = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
         )
 
+def the_turn(hand, d):
+    print(" = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+          "                                                                  \n",
+          "                            Player 2                              \n",
+          "                            **    **                              \n",
+          "                                                                  \n",
+          f"                       {d[0]}  {d[1]}  {d[2]}  **  **            \n",
+          "                                                                  \n",
+          f"                            {hand[0]}    {hand[1]}               \n",
+          "                            Player 1                              \n",
+          "                                                                  \n",
+          " = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+        )
+
 def main():
 
     if(intro() == False):
@@ -58,6 +72,23 @@ def main():
 
     print(playerOneHand)
     print(playerTwoHand)
+
+    table_hand = []
+    i = 0
+    while(i < 3):
+        cardDrawn = deck.draw()
+        table_hand.append(cardDrawn)
+        i += 1
+
+    
+
+    
+
+    the_turn(playerOneHand, table_hand)
+
+    print(playerOneHand)
+    print(playerTwoHand)
+    print(table_hand)
 
 
 main()
