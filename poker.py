@@ -81,6 +81,25 @@ def the_river(hand, d):
           "                                                                  \n",
           " = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
         )
+    
+def the_showdown(hand, d):
+    print(" = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+          "                                                                  \n",
+          "                            Player 2                              \n",
+          f"                            {hand[1][0]}    {hand[1][1]}         \n",
+          "                                                                  \n",
+          f"                       {d[0]}  {d[1]}  {d[2]}  {d[3]}  {d[4]}    \n",
+          "                                                                  \n",
+          f"                            {hand[0][0]}    {hand[0][1]}         \n",
+          "                            Player 1                              \n",
+          "                                                                  \n",
+          " = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+        )
+
+def play_turn():
+    print("                                                                  \n",
+          "              Raise           Call            Fold                \n",
+          "                                                                  \n",)
 
 def main():
 
@@ -91,7 +110,7 @@ def main():
     print("Dealing your cards...")
     
     deck.shuffle()
-    hands = deck.deal(2)
+    hands = deck.deal(2) # Currently hardcoded number of players
 
     table_hand = []
     i = 0
@@ -107,32 +126,69 @@ def main():
     blank_screen()
     pre_flop(playerOneHand)
 
-    print(playerOneHand)
-    print(playerTwoHand)
+    play_turn()
+    turnPlayed = input("You Turn: ")
+    if(turnPlayed.lower() == "raise"):
+       print("raise")
+    elif(turnPlayed.lower() == "call"):
+        print("called")
+    elif(turnPlayed.lower() == "fold"):
+        print("I'm out")
+    else:
+        print("HAHAHAHA")
 
     # The Flop - Displays three cards and P1 hand
     blank_screen()
     the_flop(playerOneHand, table_hand)
-
-    print(playerOneHand)
-    print(playerTwoHand)
-    print(table_hand)
+    
+    if(turnPlayed.lower() != "fold"):
+        play_turn()
+        turnPlayed = input("You Turn: ")
+        if(turnPlayed.lower() == "raise"):
+            print("raise")
+        elif(turnPlayed.lower() == "call"):
+            print("called")
+        elif(turnPlayed.lower() == "fold"):
+            print("I'm out")
+        else:
+            print("HAHAHAHA")
 
     # The Turn - Displays four cards and P1 hand
     blank_screen()
     the_turn(playerOneHand, table_hand)
 
-    print(playerOneHand)
-    print(playerTwoHand)
-    print(table_hand)
+    if(turnPlayed.lower() != "fold"):
+        play_turn()
+        turnPlayed = input("You Turn: ")
+        if(turnPlayed.lower() == "raise"):
+            print("raise")
+        elif(turnPlayed.lower() == "call"):
+            print("called")
+        elif(turnPlayed.lower() == "fold"):
+            print("I'm out")
+        else:
+            print("HAHAHAHA")
 
     # The River - Display five cards and P1 hand
     blank_screen()
     the_river(playerOneHand, table_hand)
 
-    print(playerOneHand)
-    print(playerTwoHand)
-    print(table_hand)
+    if(turnPlayed.lower() != "fold"):
+        play_turn()
+        turnPlayed = input("You Turn: ")
+        if(turnPlayed.lower() == "raise"):
+            print("raise")
+        elif(turnPlayed.lower() == "call"):
+            print("called")
+        elif(turnPlayed.lower() == "fold"):
+            print("I'm out")
+        else:
+            print("HAHAHAHA")
+
+    # The Showdown - Displays all cards
+    players_hands = [playerOneHand, playerTwoHand]
+    blank_screen()
+    the_showdown(players_hands, table_hand)
 
 main()
 
