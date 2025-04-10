@@ -61,6 +61,13 @@ def main():
 
     blank_screen()
     print("Dealing your cards...")
+
+    table_hand = []
+    i = 0
+    while(i < 5):
+        cardDrawn = deck.draw()
+        table_hand.append(cardDrawn)
+        i += 1
     
     deck.shuffle()
     hands = deck.deal(2)
@@ -72,17 +79,6 @@ def main():
 
     print(playerOneHand)
     print(playerTwoHand)
-
-    table_hand = []
-    i = 0
-    while(i < 3):
-        cardDrawn = deck.draw()
-        table_hand.append(cardDrawn)
-        i += 1
-
-    
-
-    
 
     the_turn(playerOneHand, table_hand)
 
