@@ -40,13 +40,41 @@ def pre_flop(hand):
           " = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
         )
 
-def the_turn(hand, d):
+def the_flop(hand, d):
     print(" = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
           "                                                                  \n",
           "                            Player 2                              \n",
           "                            **    **                              \n",
           "                                                                  \n",
           f"                       {d[0]}  {d[1]}  {d[2]}  **  **            \n",
+          "                                                                  \n",
+          f"                            {hand[0]}    {hand[1]}               \n",
+          "                            Player 1                              \n",
+          "                                                                  \n",
+          " = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+        )
+    
+def the_turn(hand, d):
+    print(" = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+          "                                                                  \n",
+          "                            Player 2                              \n",
+          "                            **    **                              \n",
+          "                                                                  \n",
+          f"                       {d[0]}  {d[1]}  {d[2]}  {d[3]}  **        \n",
+          "                                                                  \n",
+          f"                            {hand[0]}    {hand[1]}               \n",
+          "                            Player 1                              \n",
+          "                                                                  \n",
+          " = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+        )
+    
+def the_river(hand, d):
+    print(" = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ = ♠ = ♣ = ♥ = ♦ =\n",
+          "                                                                  \n",
+          "                            Player 2                              \n",
+          "                            **    **                              \n",
+          "                                                                  \n",
+          f"                       {d[0]}  {d[1]}  {d[2]}  {d[3]}  {d[4]}    \n",
           "                                                                  \n",
           f"                            {hand[0]}    {hand[1]}               \n",
           "                            Player 1                              \n",
@@ -61,6 +89,9 @@ def main():
 
     blank_screen()
     print("Dealing your cards...")
+    
+    deck.shuffle()
+    hands = deck.deal(2)
 
     table_hand = []
     i = 0
@@ -69,16 +100,25 @@ def main():
         table_hand.append(cardDrawn)
         i += 1
     
-    deck.shuffle()
-    hands = deck.deal(2)
-    
     playerOneHand = hands[0]
     playerTwoHand = hands[1]
+
+    # Pre Flop - Main Set up of hands and display
 
     pre_flop(playerOneHand)
 
     print(playerOneHand)
     print(playerTwoHand)
+
+    # The Flop - Displays three cards and P1 hand
+
+    the_flop(playerOneHand, table_hand)
+
+    print(playerOneHand)
+    print(playerTwoHand)
+    print(table_hand)
+
+    # The Turn - Displays four cards and P1 hand
 
     the_turn(playerOneHand, table_hand)
 
@@ -86,6 +126,11 @@ def main():
     print(playerTwoHand)
     print(table_hand)
 
+    the_river(playerOneHand, table_hand)
+
+    print(playerOneHand)
+    print(playerTwoHand)
+    print(table_hand)
 
 main()
 
