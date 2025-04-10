@@ -1,7 +1,9 @@
 from deck import Deck
+from player import Player
 # ♣♥♦♠
 
 deck = Deck()
+player1 = Player()
 
 def blank_screen():
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
@@ -98,7 +100,7 @@ def the_showdown(hand, d):
 
 def play_turn():
     print("                                                                  \n",
-          "              Raise           Call            Fold                \n",
+          "      Raise           Call            Fold           All          \n",
           "                                                                  \n",)
 
 def main():
@@ -129,11 +131,13 @@ def main():
     play_turn()
     turnPlayed = input("You Turn: ")
     if(turnPlayed.lower() == "raise"):
-       print("raise")
+        print("raised")
     elif(turnPlayed.lower() == "call"):
         print("called")
     elif(turnPlayed.lower() == "fold"):
         print("I'm out")
+    elif(turnPlayed.lower() == "all"):
+        print("I'm in")
     else:
         print("HAHAHAHA")
 
@@ -150,6 +154,8 @@ def main():
             print("called")
         elif(turnPlayed.lower() == "fold"):
             print("I'm out")
+        elif(turnPlayed.lower() == "all"):
+            print("I'm in")
         else:
             print("HAHAHAHA")
 
@@ -166,6 +172,8 @@ def main():
             print("called")
         elif(turnPlayed.lower() == "fold"):
             print("I'm out")
+        elif(turnPlayed.lower() == "all"):
+            print("I'm in")
         else:
             print("HAHAHAHA")
 
@@ -182,6 +190,8 @@ def main():
             print("called")
         elif(turnPlayed.lower() == "fold"):
             print("I'm out")
+        elif(turnPlayed.lower() == "all"):
+            print("I'm in")
         else:
             print("HAHAHAHA")
 
