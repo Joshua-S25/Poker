@@ -132,6 +132,29 @@ def check_royal(hand):
     return False
 
 def check_sflush(hand):
+    tally_matches = {}
+    i = 0
+    flushed = False
+
+    while(i < 7):
+        if(hand[i][1] in tally_matches):
+            tally_matches[hand[i][1]] += 1
+        else:
+            tally_matches[hand[i][1]] = 1
+
+        i += 1
+
+    max_key = max(tally_matches, key = lambda key: tally_matches[key])
+
+    print(tally_matches)
+
+    if(tally_matches[max_key] <= 5):
+        flushed = True
+
+    # if(flushed = True):
+    #     ### Now solve how to look at a straight
+    #     place = "holder"
+
     return
 
 def check_four(hand):
