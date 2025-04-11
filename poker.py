@@ -103,45 +103,110 @@ def play_turn():
           "      Raise           Call            Fold           All          \n",
           "                                                                  \n",)
 
-def get_len(hand):
-    loop = True
-    while(loop):
-        i += 1
-        try:
-            hand[i]
-        except IndexError:
-            loop = False
-            continue
+# def get_len(hand):
+#     i = 0
+#     loop = True
+#     while(loop):
+#         i += 1
+#         try:
+#             hand[i]
+#         except IndexError:
+#             loop = False
+#             continue
 
-    return i
+#     return i
+
+def parse(hand):
+    RANK_ORDER = {
+    '2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
+    '7': 7, '8': 8, '9': 9,
+    '1': 10,
+    'J': 11, 'Q': 12, 'K': 13, 'A': 14
+    }
+
+    SUIT_ORDER = {
+    '♣': 0, '♦': 1, '♥': 2, '♠': 3
+    }
+
+    # hand = [
+    #         '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '1♣', 'J♣', 'Q♣', 'K♣', 'A♣',
+    #         '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '1♠', 'J♠', 'Q♠', 'K♠', 'A♠',
+    #         '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '1♥', 'J♥', 'Q♥', 'K♥', 'A♥',
+    #         '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '1♦', 'J♦', 'Q♦', 'K♦', 'A♦'
+    #     ]
+
+    parsed = []
+
+    i = 0
+    while(i < len(hand)):
+        rank = RANK_ORDER[hand[i][0]]
+        suit = SUIT_ORDER[hand[i][1]]
+        parsed_card = (rank, suit)
+        parsed.append(parsed_card)
+        i += 1
+
+    print(parsed)
+    return parsed
+
+def reparse(hand):
+    RANK_LOOKUP = {
+    2: '2', 3: '3', 4: '4', 5: '5', 6: '6',
+    7: '7', 8: '8', 9: '9',
+    10: '1',
+    11: 'J', 12: 'Q', 13: 'K', 14: 'A'
+    }
+
+    SUIT_LOOKUP = {
+    0: '♣', 1: '♦', 2: '♥', 3: '♠'
+    }
+
+    sort_hold = []
+
+    i = 0
+    while(i < len(hand)):
+        rank = RANK_LOOKUP[hand[i][0]]
+        suit = SUIT_LOOKUP[hand[i][1]]
+        reparsed_card = f"{rank}" + f"{suit}"
+        sort_hold.append(reparsed_card)
+        i += 1
+
+    print(sort_hold)
+    return sort_hold
 
 def sort(hand):
-    print(hand)
-
-    len = get_len(hand)
-
-    if(hand == 1):
+    if(len(hand) == 1):
         return hand
 
-    mid = hand // 2
+    mid = len(hand) // 2
 
-    l_hand = hand[mid:]
-    r_hand = hand[:mid]
+    l_hand = hand[:mid]
+    r_hand = hand[mid:]
 
     l_sorted = sort(l_hand)
     r_sorted = sort(r_hand)
 
-    l_len = get_len(l_sorted)
-    r_len = get_len(r_sorted)
+    sorted = []
+    l = 0
+    r = 0
+    while(l < len(l_sorted) and r < len(r_sorted)):
+        if l_sorted[l] < r_sorted[r]:
+            sorted.append(l_sorted[l])
+            l += 1
+        else:
+            sorted.append(r_sorted[r])
+            r += 1
 
-    print(hand)
-    print(l_hand)
-    print(r_hand)
 
-    # l = 0
-    # r = 0
-    # while(l < l_len and r < r_len):
-    #     if(l_sorted[l][0] < r_sorted[r][0]):
+        while l < len(l_sorted):
+            sorted.append(l_sorted[l])
+            l += 1
+
+        while r < len(r_sorted):
+            sorted.append(r_sorted[r])
+            r += 1
+
+    print(sorted)
+    return sorted
 
     
     
@@ -249,7 +314,10 @@ def check_flush(hand):
     return False
 
 def check_straight(hand):
-    sort(hand)
+    parsed_hand = parse(hand)
+    parsed_sort = sort(parsed_hand)
+    sorted_hand = reparse(parsed_sort)
+    return False
 
 
 def check_win(hand):
