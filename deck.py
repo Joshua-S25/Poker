@@ -43,5 +43,8 @@ class Deck():
     
     def draw(self):
         card = self.deck.pop()
-        
+
         return card
+    
+    def burn(self):
+        self.deck.pop()

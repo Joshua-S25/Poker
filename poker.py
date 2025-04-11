@@ -103,6 +103,10 @@ def play_turn():
           "      Raise           Call            Fold           All          \n",
           "                                                                  \n",)
 
+def sort(hand):
+    i = 0
+    j = 1
+
 def check_royal(hand):
     i = 0
     rf_check_diamond = 0
@@ -198,7 +202,7 @@ def check_flush(hand):
 
     print(tally_matches)
 
-    if(tally_matches[max_key] <= 5):
+    if(tally_matches[max_key] >= 5):
         print("Winner!")
         return True
     
@@ -228,6 +232,7 @@ def main():
     deck.shuffle()
     hands = deck.deal(2) # Currently hardcoded number of players
 
+    deck.burn()
     table_hand = []
     i = 0
     while(i < 5):
