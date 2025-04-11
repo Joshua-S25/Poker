@@ -103,6 +103,38 @@ def play_turn():
           "      Raise           Call            Fold           All          \n",
           "                                                                  \n",)
 
+def check_royal(hand):
+    i = 0
+    rf_check_diamond = 0
+    rf_check_heart = 0
+    rf_check_spade = 0
+    rf_check_club = 0
+
+    while(i < 7):
+        if((hand[i] in ['1♦', 'J♦', 'Q♦', 'K♦', 'A♦'])):
+            print("Diamonds")
+            rf_check_diamond += 1
+        elif((hand[i] in ['1♥', 'J♥', 'Q♥', 'K♥', 'A♥'])):
+            print("Hearts")
+            rf_check_heart += 1
+        elif((hand[i] in ['1♠', 'J♠', 'Q♠', 'K♠', 'A♠'])):
+            print("Spades")
+            rf_check_spade += 1
+        elif((hand[i] in ['1♣', 'J♣', 'Q♣', 'K♣', 'A♣'])):
+            print("Clubs")
+            rf_check_club += 1
+        
+        i += 1
+
+    if((rf_check_diamond == 5) or (rf_check_heart == 5) or (rf_check_spade == 5) or (rf_check_club == 5)):
+        return True
+    
+    return False
+
+def check_win(hand):
+    if(check_royal(hand)):
+        return "Royal Flush"
+
 def main():
 
     if(intro() == False):
@@ -199,6 +231,8 @@ def main():
     players_hands = [playerOneHand, playerTwoHand]
     blank_screen()
     the_showdown(players_hands, table_hand)
+    usable_hand = table_hand + playerOneHand
+    check_win(usable_hand)
 
 main()
 
