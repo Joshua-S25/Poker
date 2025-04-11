@@ -103,9 +103,49 @@ def play_turn():
           "      Raise           Call            Fold           All          \n",
           "                                                                  \n",)
 
+def get_len(hand):
+    loop = True
+    while(loop):
+        i += 1
+        try:
+            hand[i]
+        except IndexError:
+            loop = False
+            continue
+
+    return i
+
 def sort(hand):
-    i = 0
-    j = 1
+    print(hand)
+
+    len = get_len(hand)
+
+    if(hand == 1):
+        return hand
+
+    mid = hand // 2
+
+    l_hand = hand[mid:]
+    r_hand = hand[:mid]
+
+    l_sorted = sort(l_hand)
+    r_sorted = sort(r_hand)
+
+    l_len = get_len(l_sorted)
+    r_len = get_len(r_sorted)
+
+    print(hand)
+    print(l_hand)
+    print(r_hand)
+
+    # l = 0
+    # r = 0
+    # while(l < l_len and r < r_len):
+    #     if(l_sorted[l][0] < r_sorted[r][0]):
+
+    
+    
+    
 
 def check_royal(hand):
     i = 0
@@ -208,6 +248,9 @@ def check_flush(hand):
     
     return False
 
+def check_straight(hand):
+    sort(hand)
+
 
 def check_win(hand):
     if(check_royal(hand)):
@@ -220,6 +263,8 @@ def check_win(hand):
         return "Full House"
     elif(check_flush(hand)):
         return "Flush"
+    elif(check_straight(hand)):
+        return "Straight"
 
 def main():
 
