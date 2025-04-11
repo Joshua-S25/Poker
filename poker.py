@@ -148,7 +148,7 @@ def check_four(hand):
 
     max_key = max(tally_matches, key = lambda key: tally_matches[key])
 
-    print(tally_matches)
+    # print(tally_matches)
 
     if(tally_matches[max_key] == 4):
         print("Winner!")
@@ -156,13 +156,43 @@ def check_four(hand):
     
     return False
 
+def check_fhouse(hand):
+    return False
+
+def check_flush(hand):
+    tally_matches = {}
+    i = 0
+
+    while(i < 7):
+        if(hand[i][1] in tally_matches):
+            tally_matches[hand[i][1]] += 1
+        else:
+            tally_matches[hand[i][1]] = 1
+
+        i += 1
+
+    max_key = max(tally_matches, key = lambda key: tally_matches[key])
+
+    print(tally_matches)
+
+    if(tally_matches[max_key] <= 5):
+        print("Winner!")
+        return True
+    
+    return False
+
+
 def check_win(hand):
     if(check_royal(hand)):
         return "Royal Flush"
-    elif(check_sflush(hand)):
+    elif(check_sflush(hand)): # Not yet implemented
         return "Straight Flush"
     elif(check_four(hand)):
         return "Four of a Kind"
+    elif(check_fhouse(hand)):
+        return "Full House"
+    elif(check_flush(hand)):
+        return "Flush"
 
 def main():
 
