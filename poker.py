@@ -112,16 +112,16 @@ def check_royal(hand):
 
     while(i < 7):
         if((hand[i] in ['1♦', 'J♦', 'Q♦', 'K♦', 'A♦'])):
-            print("Diamonds")
+            # print("Diamonds")
             rf_check_diamond += 1
         elif((hand[i] in ['1♥', 'J♥', 'Q♥', 'K♥', 'A♥'])):
-            print("Hearts")
+            # print("Hearts")
             rf_check_heart += 1
         elif((hand[i] in ['1♠', 'J♠', 'Q♠', 'K♠', 'A♠'])):
-            print("Spades")
+            # print("Spades")
             rf_check_spade += 1
         elif((hand[i] in ['1♣', 'J♣', 'Q♣', 'K♣', 'A♣'])):
-            print("Clubs")
+            # print("Clubs")
             rf_check_club += 1
         
         i += 1
@@ -131,9 +131,38 @@ def check_royal(hand):
     
     return False
 
+def check_sflush(hand):
+    return
+
+def check_four(hand):
+    tally_matches = {}
+    i = 0
+
+    while(i < 7):
+        if(hand[i][0] in tally_matches):
+            tally_matches[hand[i][0]] += 1
+        else:
+            tally_matches[hand[i][0]] = 1
+
+        i += 1
+
+    max_key = max(tally_matches, key = lambda key: tally_matches[key])
+
+    print(tally_matches)
+
+    if(tally_matches[max_key] == 4):
+        print("Winner!")
+        return True
+    
+    return False
+
 def check_win(hand):
     if(check_royal(hand)):
         return "Royal Flush"
+    elif(check_sflush(hand)):
+        return "Straight Flush"
+    elif(check_four(hand)):
+        return "Four of a Kind"
 
 def main():
 
@@ -232,6 +261,7 @@ def main():
     blank_screen()
     the_showdown(players_hands, table_hand)
     usable_hand = table_hand + playerOneHand
+
     win = check_win(usable_hand)
 
     print(f"You won through a {win}")
