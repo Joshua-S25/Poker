@@ -5,6 +5,9 @@ from player import Player
 deck = Deck()
 player1 = Player()
 
+
+### All of these are for terminal display purposes
+
 def blank_screen():
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
@@ -103,18 +106,8 @@ def play_turn():
           "      Raise           Call            Fold           All          \n",
           "                                                                  \n",)
 
-# def get_len(hand):
-#     i = 0
-#     loop = True
-#     while(loop):
-#         i += 1
-#         try:
-#             hand[i]
-#         except IndexError:
-#             loop = False
-#             continue
 
-#     return i
+### Parsing and Sorting combination
 
 def parse(hand):
     RANK_ORDER = {
@@ -127,13 +120,6 @@ def parse(hand):
     SUIT_ORDER = {
     '♣': 0, '♦': 1, '♥': 2, '♠': 3
     }
-
-    # hand = [
-    #         '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '1♣', 'J♣', 'Q♣', 'K♣', 'A♣',
-    #         '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '1♠', 'J♠', 'Q♠', 'K♠', 'A♠',
-    #         '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '1♥', 'J♥', 'Q♥', 'K♥', 'A♥',
-    #         '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '1♦', 'J♦', 'Q♦', 'K♦', 'A♦'
-    #     ]
 
     parsed = []
 
@@ -210,7 +196,7 @@ def sort(hand):
 
     
     
-    
+### Combination of checks to see if win conditions are met
 
 def check_royal(hand):
     i = 0
@@ -313,8 +299,8 @@ def check_flush(hand):
     
     return False
 
-def check_straight(hand):
-    parsed_hand = parse(hand)
+def check_straight(hand):                           # Attention to this funciton really quick. I have the methods for sorting, however, I don't believe it's working
+    parsed_hand = parse(hand)                       # Would you be able to help check what could be incorrect? - JS
     parsed_sort = sort(parsed_hand)
     sorted_hand = reparse(parsed_sort)
     return False
