@@ -232,7 +232,9 @@ def main():
     blank_screen()
     the_showdown(players_hands, table_hand)
     usable_hand = table_hand + playerOneHand
-    check_win(usable_hand)
+    win = check_win(usable_hand)
+
+    print(f"You won through a {win}")
 
 main()
 
