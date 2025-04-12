@@ -24,7 +24,7 @@ Needs:
 
 Hours Tracker:  
 J - [x][x][x][x][x][x][x][x]  
-L - [x][ ][ ][ ][ ][ ][ ][ ]  
+L - [x][x][x][ ][ ][ ][ ][ ]  
 
 # Project Idea Going Forward - Poker    
 Needs:   
@@ -55,3 +55,44 @@ Diamonds | 2 3 4 5 6 7 8 9 10 J Q K A
 D2 D3 D4 ... DJ DQ DK DA  
 Hearts   | 2 3 4 5 6 7 8 9 10 J Q K A  
 H2 H3 H4 ... HJ HQ HK HA  
+
+Foundation Logic
+  - Deck object
+  - Shuffle Functionality
+  - Rank Hands Function
+  - Showdown Function
+  - Game State:
+      - Community cards
+      - Pot (Chip and Bet functionality required)
+      - Current Bet tracker
+      - Dealer position
+  -AI Players/Multiplayer?
+
+Player Structure
+  - Personal Chips
+  - Hole Cards
+  - Active/Fold/All-in Status
+
+Graphics
+  - Game Window
+  - Card Images
+  - Image Placeholders:
+      - Community Cards
+      - Hold Cards
+      - Poker Chips
+      - UI Elements:
+          - Buttons (Fold, Call, Raise, All In)
+          - Display Current Bet
+          - Chip Selection
+          - Face down/Face up Cards
+
+Main Game Loop
+  - Events (Game Phases, Player Wins, etc.)
+      - Phases:
+          - Pre-Flop
+          - Flop
+          - Turn
+          - River
+          - Showdown
+  - Game State
+  - Render Graphics
