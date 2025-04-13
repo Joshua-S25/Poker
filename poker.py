@@ -174,6 +174,12 @@ def sort(hand):
     sorted = []
     l = 0
     r = 0
+
+    print("Here is the splits: ")
+    print(l_sorted)
+    print(r_sorted)
+    print("")
+
     while(l < len(l_sorted) and r < len(r_sorted)):
         if l_sorted[l] < r_sorted[r]:
             sorted.append(l_sorted[l])
@@ -182,15 +188,15 @@ def sort(hand):
             sorted.append(r_sorted[r])
             r += 1
 
+    while l < len(l_sorted):
+        sorted.append(l_sorted[l])
+        l += 1
 
-        while l < len(l_sorted):
-            sorted.append(l_sorted[l])
-            l += 1
+    while r < len(r_sorted):
+        sorted.append(r_sorted[r])
+        r += 1
 
-        while r < len(r_sorted):
-            sorted.append(r_sorted[r])
-            r += 1
-
+        
     print(sorted)
     return sorted
 
