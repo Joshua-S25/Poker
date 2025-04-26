@@ -91,7 +91,7 @@ def load_assets():
         'K♦': 'Kdiamonds', 'A♦': 'Adiamonds'
     }
     for card, key in deck_to_image.items():
-        filename = f"{key}.png"
+        filename = f"cards/{key}.png"
         try:
             card_image = pygame.image.load(filename).convert_alpha()
             card_images[card] = pygame.transform.scale(card_image, (CARD_WIDTH, CARD_HEIGHT))
