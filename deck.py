@@ -28,9 +28,11 @@ class Deck():
         # print(self.deck)  # Post Shuffle
     
     def deal(self, numPlayers):
-        dealt_hands = [[],[]]
-        i = 0
+        dealt_hands = [[] for _ in range(numPlayers)]
 
+        print(dealt_hands)
+        i = 0
+        
         while(i < 2):
             j = 0
 
