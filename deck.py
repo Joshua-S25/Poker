@@ -29,8 +29,6 @@ class Deck():
     
     def deal(self, numPlayers):
         dealt_hands = [[] for _ in range(numPlayers)]
-
-        print(dealt_hands)
         i = 0
         
         while(i < 2):

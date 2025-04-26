@@ -388,6 +388,9 @@ def main():
             players[2]["bet"] = 20  # Big blind
             players[2]["chips"] -= 20
             players[2]["has_acted"] = True
+
+            print(players)
+
             current_bet = 20
             pot += 30
             current_player = 3  # Start with Player 4 (after big blind)
@@ -508,7 +511,7 @@ def main():
                         best_player = i
                 winner = f"Player {best_player + 1} wins with {best_score[1]}"
             render_game(scr, table_image, card_images, button_images, player_hands, community_cards, pot, phase, players, current_bet, current_player, winner)
-            pygame.time.wait(3000)
+            pygame.time.wait(10000)
             running = False
 
     pygame.quit()

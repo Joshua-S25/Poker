@@ -26,6 +26,11 @@ Hours Tracker:
 J - [x][x][x][x][x][x][x][x]  
 L - [x][x][x][ ][ ][ ][ ][ ]  
 
+
+Current bugs ::
+- [ ] - The turns wont go around when the first player folds
+- [ ] - The Two Pair win condition doesn't perfectly match
+
 # Project Idea Going Forward - Poker    
 Needs:   
 - [ ] Deck object  
